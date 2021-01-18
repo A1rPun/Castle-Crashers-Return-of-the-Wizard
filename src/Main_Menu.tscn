@@ -1,16 +1,16 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://docs/full.png" type="Texture" id=1]
-[ext_resource path="res://docs/Moon.png" type="Texture" id=2]
-[ext_resource path="res://docs/logo.png" type="Texture" id=3]
-[ext_resource path="res://docs/wizard.png" type="Texture" id=4]
-[ext_resource path="res://docs/Credits.png" type="Texture" id=5]
-[ext_resource path="res://docs/fog.png" type="Texture" id=6]
-[ext_resource path="res://docs/tower.png" type="Texture" id=7]
-[ext_resource path="res://docs/Play.png" type="Texture" id=8]
-[ext_resource path="res://docs/back.png" type="Texture" id=9]
-[ext_resource path="res://docs/Settings.png" type="Texture" id=10]
-[ext_resource path="res://docs/Quit.png" type="Texture" id=11]
+[ext_resource path="res://src/img/Moon.png" type="Texture" id=2]
+[ext_resource path="res://src/img/logo.png" type="Texture" id=3]
+[ext_resource path="res://src/img/wizard.png" type="Texture" id=4]
+[ext_resource path="res://src/img/Credits.png" type="Texture" id=5]
+[ext_resource path="res://src/img/fog.png" type="Texture" id=6]
+[ext_resource path="res://src/img/tower.png" type="Texture" id=7]
+[ext_resource path="res://src/img/Play.png" type="Texture" id=8]
+[ext_resource path="res://src/img/back.png" type="Texture" id=9]
+[ext_resource path="res://src/img/Settings.png" type="Texture" id=10]
+[ext_resource path="res://src/img/Quit.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "gof"
@@ -53,6 +53,7 @@ scale = Vector2( 2.28572, 2.76356 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fog"]
+autoplay = "gof"
 method_call_mode = 1
 anims/gof = SubResource( 1 )
 
@@ -87,7 +88,6 @@ scale = Vector2( 1.38704, 1.38704 )
 texture = ExtResource( 2 )
 
 [node name="wizard" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1340.31, 802.707 )
 scale = Vector2( 1.38704, 1.38704 )
 texture = ExtResource( 4 )
