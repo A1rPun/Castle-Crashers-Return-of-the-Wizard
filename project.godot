@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Castle Crashers Return of the Wizard"
-run/main_scene="res://src/game/Player.tscn"
+run/main_scene="res://src/game/Main_Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
