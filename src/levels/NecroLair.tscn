@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/43.svg" type="Texture" id=8]
 [ext_resource path="res://assets/31.svg" type="Texture" id=9]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
@@ -86,7 +85,7 @@ texture = ExtResource( 3 )
 offset = Vector2( 361.395, -130.948 )
 
 [node name="18" type="Sprite" parent="."]
-position = Vector2( 180.654, -133.365 )
+position = Vector2( 180.654, -134.487 )
 texture = ExtResource( 3 )
 offset = Vector2( -196.568, -137.622 )
 
@@ -165,7 +164,7 @@ tile_data = PoolIntArray( -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 
 position = Vector2( -33.2978, -35.6762 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-position = Vector2( 140.936, -170.422 )
+position = Vector2( 136.446, -46.9512 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
