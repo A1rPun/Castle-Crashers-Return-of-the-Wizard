@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 #0	Nothing
 #1	Green Knight

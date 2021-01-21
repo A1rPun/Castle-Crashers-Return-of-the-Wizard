@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/15.svg" type="Texture" id=1]
 [ext_resource path="res://assets/12.svg" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/27.svg" type="Texture" id=7]
 [ext_resource path="res://assets/43.svg" type="Texture" id=8]
 [ext_resource path="res://assets/31.svg" type="Texture" id=9]
+[ext_resource path="res://src/actors/Level.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -39,6 +40,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [node name="NecroLair" type="Node2D"]
 position = Vector2( 307.995, 926.403 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
 
 [node name="14" type="Sprite" parent="."]
 position = Vector2( -65.3313, -23.175 )
@@ -162,7 +164,6 @@ tile_data = PoolIntArray( -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -33.2978, -35.6762 )
-character_id = 20
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( 136.446, -46.9512 )

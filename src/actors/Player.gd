@@ -24,33 +24,14 @@ const states := {
 
 const characters := {
 	"barbarian": 6,
+	"king": 12,
 	"necromancer": 20,
 };
 
-const composite_sprites = preload("res://src/actors/CompositeSprites.gd");
+const composite_sprites = preload("res://src/actors/CompositePlayerSprites.gd");
 
 func _ready():
-	$PlayerSprite/head.texture = composite_sprites.head_spritesheet[self.character_id];
-	$PlayerSprite/head_back.texture = composite_sprites.head_back_spritesheet[self.character_id];
-	$PlayerSprite/head_forward.texture = composite_sprites.head_forward_spritesheet[self.character_id];
-	$PlayerSprite/head_front.texture = composite_sprites.head_front_spritesheet[self.character_id];
-	$PlayerSprite/head_down.texture = composite_sprites.head_down_spritesheet[self.character_id];
-	$PlayerSprite/normal_body_sprite/body.texture = composite_sprites.body_spritesheet[self.character_id];
-	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[self.character_id];
-	$PlayerSprite/normal_body_sprite/shield.texture = composite_sprites.shield_spritesheet[self.character_id];
-	$PlayerSprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[self.character_id];
-	
-	if self.character_id == characters.necromancer:
-		$PlayerSprite/left_winger.visible = true;
-		$PlayerSprite/right_winger.visible = true;
-		$wings_anim.play("wings");
-		
-	if self.character_id == characters.barbarian or self.character_id == characters.necromancer:
-		$PlayerSprite/head.offset.y = -10;
-		$PlayerSprite/head_back.offset.y = -10;
-		$PlayerSprite/head_forward.offset.y = -10;
-		$PlayerSprite/head_front.offset.y = -10;
-		$PlayerSprite/head_down.offset.y = -10;
+	change_character(self.character_id);
 
 func _physics_process(delta: float) -> void:
 	is_moving = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")  or Input.is_action_pressed("move_down")  or Input.is_action_pressed("move_up");
@@ -155,3 +136,26 @@ func to_normal():
 func _on_player_anim_animation_finished(anim_name: String) -> void:
 	if anim_name == "LIGHT_ATTACK_ONE" or anim_name == "LIGHT_ATTACK_TWO":
 		state = states.idle;
+
+func change_character(character_id):
+	$PlayerSprite/head.texture = composite_sprites.head_spritesheet[character_id];
+	$PlayerSprite/head_back.texture = composite_sprites.head_back_spritesheet[character_id];
+	$PlayerSprite/head_forward.texture = composite_sprites.head_forward_spritesheet[character_id];
+	$PlayerSprite/head_front.texture = composite_sprites.head_front_spritesheet[character_id];
+	$PlayerSprite/head_down.texture = composite_sprites.head_down_spritesheet[character_id];
+	$PlayerSprite/normal_body_sprite/body.texture = composite_sprites.body_spritesheet[character_id];
+	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[character_id];
+	$PlayerSprite/normal_body_sprite/shield.texture = composite_sprites.shield_spritesheet[character_id];
+	$PlayerSprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[character_id];
+	
+	if character_id == characters.necromancer:
+		$PlayerSprite/left_winger.visible = true;
+		$PlayerSprite/right_winger.visible = true;
+		$wings_anim.play("wings");
+		
+	if character_id == characters.barbarian or character_id == characters.king or character_id == characters.necromancer:
+		$PlayerSprite/head.offset.y = -10;
+		$PlayerSprite/head_back.offset.y = -10;
+		$PlayerSprite/head_forward.offset.y = -10;
+		$PlayerSprite/head_front.offset.y = -10;
+		$PlayerSprite/head_down.offset.y = -10;
