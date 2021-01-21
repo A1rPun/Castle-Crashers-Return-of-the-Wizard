@@ -22,6 +22,11 @@ const states := {
 	"heavy_sword_spin": 7
 };
 
+const characters := {
+	"barbarian": 6,
+	"necromancer": 20,
+};
+
 const composite_sprites = preload("res://src/actors/CompositeSprites.gd");
 
 func _ready():
@@ -32,6 +37,20 @@ func _ready():
 	$PlayerSprite/head_down.texture = composite_sprites.head_down_spritesheet[self.character_id];
 	$PlayerSprite/normal_body_sprite/body.texture = composite_sprites.body_spritesheet[self.character_id];
 	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[self.character_id];
+	$PlayerSprite/normal_body_sprite/shield.texture = composite_sprites.shield_spritesheet[self.character_id];
+	$PlayerSprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[self.character_id];
+	
+	if self.character_id == characters.necromancer:
+		$PlayerSprite/left_winger.visible = true;
+		$PlayerSprite/right_winger.visible = true;
+		$wings_anim.play("wings");
+		
+	if self.character_id == characters.barbarian or self.character_id == characters.necromancer:
+		$PlayerSprite/head.offset.y = -10;
+		$PlayerSprite/head_back.offset.y = -10;
+		$PlayerSprite/head_forward.offset.y = -10;
+		$PlayerSprite/head_front.offset.y = -10;
+		$PlayerSprite/head_down.offset.y = -10;
 
 func _physics_process(delta: float) -> void:
 	is_moving = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")  or Input.is_action_pressed("move_down")  or Input.is_action_pressed("move_up");
@@ -55,7 +74,7 @@ func _physics_process(delta: float) -> void:
 		state = states.light_attack_two if state == states.light_attack_one else states.light_attack_one;
 	elif Input.is_action_just_pressed("heavy_attack"):
 		state = states.heavy_attack_slam if is_jumping else states.heavy_attack_one;
-	elif Input.is_action_pressed("block"):
+	elif !is_jumping && Input.is_action_pressed("block"):
 		state = states.block;
 	elif Input.is_action_just_released("block"):
 		state = states.idle;
@@ -112,25 +131,27 @@ func update_texture():
 	elif state == states.light_attack_two:
 		$player_anim.play("LIGHT_ATTACK_TWO");
 	elif state == states.heavy_attack_slam:
-		$player_anim.play("HEAVY_ATTACK");
+		$player_anim.play("HEAVY_ATTACK_SLAM");
 	elif state == states.block:
-		$player_anim.play("BEEFY_BLOCK" if beefy else "BLOCK");
+		$player_anim.play("BLOCK_BEEFY" if beefy else "BLOCK");
 	else:
-		$player_anim.play("BEEFY_IDLE" if beefy else "IDLE");
+		$player_anim.play("IDLE_BEEFY" if beefy else "IDLE");
 	
 	$item_select.visible = item_select_counter < item_select_counter_max;
 
 func to_beefy():
-	$wings_anim.stop();
+	if self.character_id == characters.necromancer:
+		$wings_anim.stop();
 	$PlayerSprite/beefy_body_sprite.visible = true;
 	$PlayerSprite/normal_body_sprite.visible = false;
 	
 func to_normal():
-	$wings_anim.play("wings");
+	if self.character_id == characters.necromancer:
+		$wings_anim.play("wings");
 	$PlayerSprite/beefy_body_sprite.visible = false;
 	$PlayerSprite/normal_body_sprite.visible = true;
 
 
 func _on_player_anim_animation_finished(anim_name: String) -> void:
 	if anim_name == "LIGHT_ATTACK_ONE" or anim_name == "LIGHT_ATTACK_TWO":
-		state = 0;
+		state = states.idle;
