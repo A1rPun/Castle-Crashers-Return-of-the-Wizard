@@ -34,36 +34,36 @@ extends Sprite
 #31	Hatty
 
 const head_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/head/20_head.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_head.svg"),
 };
 
 const head_forward_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/head/20_head_forward.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_head_forward.svg"),
 };
 
 const head_back_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/head/20_head_back.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_head_back.svg"),
 };
 
 const head_front_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/head/20_head_front.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_head_front.svg"),
 };
 
 const head_down_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/head/20_head_down.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_head_down.svg"),
 };
 
 const body_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/body/20_body.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_body.svg"),
 };
 
 const body_side_spritesheet = {
-	0: preload("res://src/img/player/items/sandwich.svg"),
-	20: preload("res://src/img/player/body/20_body_side.svg"),
+	0: preload("res://src/img/items/sandwich.svg"),
+	20: preload("res://src/img/player/20_body_side.svg"),
 };
