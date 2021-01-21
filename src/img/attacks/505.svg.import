@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20_head_down.svg-05efb4ebc6ebe93bde2dbd649b0a9512.stex"
+path="res://.import/505.svg-c4ed8303503c4d0803aef70eeae4999e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/head/20_head_down.svg"
-dest_files=[ "res://.import/20_head_down.svg-05efb4ebc6ebe93bde2dbd649b0a9512.stex" ]
+source_file="res://src/img/attacks/505.svg"
+dest_files=[ "res://.import/505.svg-c4ed8303503c4d0803aef70eeae4999e.stex" ]
 
 [params]
 

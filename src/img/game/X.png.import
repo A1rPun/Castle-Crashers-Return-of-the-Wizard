@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GSMace.svg-68bc970c4c70180c960d3b49676046a7.stex"
+path="res://.import/X.png-234b8e37f451d3db70698ad4058962b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/weapon/GSMace.svg"
-dest_files=[ "res://.import/GSMace.svg-68bc970c4c70180c960d3b49676046a7.stex" ]
+source_file="res://src/img/game/X.png"
+dest_files=[ "res://.import/X.png-234b8e37f451d3db70698ad4058962b5.stex" ]
 
 [params]
 

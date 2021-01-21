@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/490.svg-3f125067f113686ee3f019819708daf4.stex"
+path="res://.import/WoodenClub.svg-c71dfb8fd7380f57d922582a392486ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/490.svg"
-dest_files=[ "res://.import/490.svg-3f125067f113686ee3f019819708daf4.stex" ]
+source_file="res://src/img/weapons/WoodenClub.svg"
+dest_files=[ "res://.import/WoodenClub.svg-c71dfb8fd7380f57d922582a392486ff.stex" ]
 
 [params]
 

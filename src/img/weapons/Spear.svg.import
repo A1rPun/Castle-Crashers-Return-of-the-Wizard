@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20_body.svg-855485e82c7c361f59e7febfc7665b48.stex"
+path="res://.import/Spear.svg-7480e426480e4580ec779cfa1388e59a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/body/20_body.svg"
-dest_files=[ "res://.import/20_body.svg-855485e82c7c361f59e7febfc7665b48.stex" ]
+source_file="res://src/img/weapons/Spear.svg"
+dest_files=[ "res://.import/Spear.svg-7480e426480e4580ec779cfa1388e59a.stex" ]
 
 [params]
 

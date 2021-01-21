@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/34.svg-9cf365e96c3a55cc331c91e969fbb5f2.stex"
+path="res://.import/LT.png-0c7b51c2f60ab974cadaff9844eca40f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/34.svg"
-dest_files=[ "res://.import/34.svg-9cf365e96c3a55cc331c91e969fbb5f2.stex" ]
+source_file="res://src/img/game/LT.png"
+dest_files=[ "res://.import/LT.png-0c7b51c2f60ab974cadaff9844eca40f.stex" ]
 
 [params]
 

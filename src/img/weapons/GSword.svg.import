@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20_body_side.svg-fd5f7f7933b09ba56ab97022ef155a40.stex"
+path="res://.import/GSword.svg-a077cf4dfd3622d51b81aec4c05f4ec6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/body/20_body_side.svg"
-dest_files=[ "res://.import/20_body_side.svg-fd5f7f7933b09ba56ab97022ef155a40.stex" ]
+source_file="res://src/img/weapons/GSword.svg"
+dest_files=[ "res://.import/GSword.svg-a077cf4dfd3622d51b81aec4c05f4ec6.stex" ]
 
 [params]
 

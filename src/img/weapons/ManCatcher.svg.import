@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ManCatcher.svg-9b7a47bec2901269d5ca74041b86b001.stex"
+path="res://.import/ManCatcher.svg-f49a3564cc23d158b9472e5332e4d45c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/weapon/ManCatcher.svg"
-dest_files=[ "res://.import/ManCatcher.svg-9b7a47bec2901269d5ca74041b86b001.stex" ]
+source_file="res://src/img/weapons/ManCatcher.svg"
+dest_files=[ "res://.import/ManCatcher.svg-f49a3564cc23d158b9472e5332e4d45c.stex" ]
 
 [params]
 

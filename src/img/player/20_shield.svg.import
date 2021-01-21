@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/500.svg-74c1a98b3688f0b8ec68aaa3cbf0a49d.stex"
+path="res://.import/20_shield.svg-b4ea1a560512dee1503a263b9ffbb6f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/500.svg"
-dest_files=[ "res://.import/500.svg-74c1a98b3688f0b8ec68aaa3cbf0a49d.stex" ]
+source_file="res://src/img/player/20_shield.svg"
+dest_files=[ "res://.import/20_shield.svg-b4ea1a560512dee1503a263b9ffbb6f3.stex" ]
 
 [params]
 
