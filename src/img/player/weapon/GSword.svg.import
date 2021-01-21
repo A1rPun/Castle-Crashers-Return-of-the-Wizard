@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Settings.png-ef0c726350d51bf5e918d0ea14eaf079.stex"
+path="res://.import/GSword.svg-5c0633b10ce84911945935b5975ba5ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/Settings.png"
-dest_files=[ "res://.import/Settings.png-ef0c726350d51bf5e918d0ea14eaf079.stex" ]
+source_file="res://src/img/player/weapon/GSword.svg"
+dest_files=[ "res://.import/GSword.svg-5c0633b10ce84911945935b5975ba5ab.stex" ]
 
 [params]
 

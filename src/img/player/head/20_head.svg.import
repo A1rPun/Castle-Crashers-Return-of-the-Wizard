@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon.png-16e1612a594baf489d1f81b02e53d79f.stex"
+path="res://.import/20_head.svg-dfccf1cb62aa26e375e2a44a4b4d527f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/Moon.png"
-dest_files=[ "res://.import/Moon.png-16e1612a594baf489d1f81b02e53d79f.stex" ]
+source_file="res://src/img/player/head/20_head.svg"
+dest_files=[ "res://.import/20_head.svg-dfccf1cb62aa26e375e2a44a4b4d527f.stex" ]
 
 [params]
 

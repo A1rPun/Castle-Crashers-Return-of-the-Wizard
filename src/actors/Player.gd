@@ -1,17 +1,43 @@
 extends Actor
 
+export(int) var character_id;
+
+var can_move := true; # TODO
 var is_moving := false;
 var is_jumping := false;
 var face_left := false;
-var state := 0; # TODO: enum, 0 = idle
-#var running_friction := 0.9;
-var item_select_counter_max := 100;
-var item_select_counter := 1337;
+var state := 0;
+const item_select_counter_max := 100;
+var item_select_counter := item_select_counter_max;
 var item_select_index := 0;
+
+const states := {
+	"idle": 0,
+	"block": 1,
+	"light_attack_one": 2,
+	"light_attack_two": 3,
+	"heavy_attack_slam": 4,
+	"heavy_attack_one": 5,
+	"heavy_uppercut": 6,
+	"heavy_sword_spin": 7
+};
+
+const composite_sprites = preload("res://src/actors/CompositeSprites.gd");
+
+func _ready():
+	$PlayerSprite/head.texture = composite_sprites.head_spritesheet[self.character_id];
+	$PlayerSprite/head_back.texture = composite_sprites.head_back_spritesheet[self.character_id];
+	$PlayerSprite/head_forward.texture = composite_sprites.head_forward_spritesheet[self.character_id];
+	$PlayerSprite/head_front.texture = composite_sprites.head_front_spritesheet[self.character_id];
+	$PlayerSprite/head_down.texture = composite_sprites.head_down_spritesheet[self.character_id];
+	$PlayerSprite/normal_body_sprite/body.texture = composite_sprites.body_spritesheet[self.character_id];
+	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[self.character_id];
 
 func _physics_process(delta: float) -> void:
 	is_moving = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")  or Input.is_action_pressed("move_down")  or Input.is_action_pressed("move_up");
-	velocity = move_velocity(velocity, delta);
+	if can_move:
+		velocity = move_velocity(velocity, delta);
+
 	#offsetY += Input.get_action_strength("move_down") - Input.get_action_strength("move_up");
 	
 	if Input.is_action_just_pressed("switch_left") or Input.is_action_just_pressed("switch_right"):
@@ -25,18 +51,18 @@ func _physics_process(delta: float) -> void:
 			to_beefy();
 			beefy = true;
 
-	if !beefy and Input.is_action_just_pressed("light_attack"):
-		state = 2 if state == 1 else 1;
+	if Input.is_action_just_pressed("light_attack"):
+		state = states.light_attack_two if state == states.light_attack_one else states.light_attack_one;
 	elif Input.is_action_just_pressed("heavy_attack"):
-		state = 3 if is_jumping else 5;
+		state = states.heavy_attack_slam if is_jumping else states.heavy_attack_one;
 	elif Input.is_action_pressed("block"):
-		state = 4;
-	elif state == 4:
-		state = 0;
+		state = states.block;
+	elif Input.is_action_just_released("block"):
+		state = states.idle;
 		
 	item_select_counter += 1;
 	update_texture();
-	
+
 func get_direction() -> Vector3:	
 	return Vector3(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
@@ -65,7 +91,7 @@ func move_velocity(velocity: Vector3, delta: float) -> Vector3:
 	if $PlayerSprite.position.y > 0.0:
 		$PlayerSprite.position.y = 0.0;
 		is_jumping = false;
-		state = 0;
+		state = states.idle;
 		
 	velocity.x = newvel.x;
 	velocity.y = newvel.y;
@@ -81,22 +107,19 @@ func update_texture():
 			$PlayerSprite.scale.x = 1.0;
 			face_left = false;
 			
-	if state == 1:
+	if state == states.light_attack_one:
 		$player_anim.play("LIGHT_ATTACK_ONE");
-	elif state == 2:
+	elif state == states.light_attack_two:
 		$player_anim.play("LIGHT_ATTACK_TWO");
-	elif state == 3:
+	elif state == states.heavy_attack_slam:
 		$player_anim.play("HEAVY_ATTACK");
-	elif state == 4:
+	elif state == states.block:
 		$player_anim.play("BEEFY_BLOCK" if beefy else "BLOCK");
 	else:
 		$player_anim.play("BEEFY_IDLE" if beefy else "IDLE");
 	
-	if item_select_counter < item_select_counter_max:
-		$item_select.visible = true;
-	else:
-		$item_select.visible = false;
-	
+	$item_select.visible = item_select_counter < item_select_counter_max;
+
 func to_beefy():
 	$wings_anim.stop();
 	$PlayerSprite/beefy_body_sprite.visible = true;

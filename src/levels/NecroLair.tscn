@@ -149,7 +149,7 @@ position = Vector2( 443.013, -127.725 )
 texture = ExtResource( 1 )
 offset = Vector2( 221.237, -203.03 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Bounds" type="TileMap" parent="."]
 visible = false
 position = Vector2( 627.287, 0.302795 )
 tile_set = SubResource( 2 )
@@ -162,12 +162,18 @@ tile_data = PoolIntArray( -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -33.2978, -35.6762 )
+character_id = 20
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( 136.446, -46.9512 )
 current = true
+limit_left = -1000
+limit_top = -1000
+limit_right = 10000
+limit_bottom = 1000
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+smoothing_speed = 8.0
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/applesprite.png-aeef01ef658070fb82f22eb3f7750d8c.stex"
+path="res://.import/20_head_forward.svg-80f975d07d5af8651c5df545c4715ae1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/applesprite.png"
-dest_files=[ "res://.import/applesprite.png-aeef01ef658070fb82f22eb3f7750d8c.stex" ]
+source_file="res://src/img/player/head/20_head_forward.svg"
+dest_files=[ "res://.import/20_head_forward.svg-80f975d07d5af8651c5df545c4715ae1.stex" ]
 
 [params]
 

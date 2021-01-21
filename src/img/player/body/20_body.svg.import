@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/629.svg-8b96a60b42797e2ed33e3646701ef80b.stex"
+path="res://.import/20_body.svg-855485e82c7c361f59e7febfc7665b48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/629.svg"
-dest_files=[ "res://.import/629.svg-8b96a60b42797e2ed33e3646701ef80b.stex" ]
+source_file="res://src/img/player/body/20_body.svg"
+dest_files=[ "res://.import/20_body.svg-855485e82c7c361f59e7febfc7665b48.stex" ]
 
 [params]
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://assets/64.svg" type="Texture" id=1]
-[ext_resource path="res://assets/126.svg" type="Texture" id=2]
-[ext_resource path="res://assets/120.svg" type="Texture" id=3]
+[ext_resource path="res://src/img/player/body/20_body.svg" type="Texture" id=1]
+[ext_resource path="res://src/img/player/head/20_head.svg" type="Texture" id=2]
+[ext_resource path="res://src/img/player/weapon/GSMace.svg" type="Texture" id=3]
 [ext_resource path="res://assets/99.svg" type="Texture" id=4]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=5]
 [ext_resource path="res://assets/13.svg" type="Texture" id=6]
 [ext_resource path="res://assets/268.svg" type="Texture" id=7]
-[ext_resource path="res://assets/1789.svg" type="Texture" id=8]
+[ext_resource path="res://src/img/player/items/sandwich.svg" type="Texture" id=8]
 [ext_resource path="res://assets/94.svg" type="Texture" id=9]
 [ext_resource path="res://assets/34.svg" type="Texture" id=10]
 [ext_resource path="res://assets/33.svg" type="Texture" id=11]
@@ -18,15 +18,17 @@
 [ext_resource path="res://assets/1063.svg" type="Texture" id=16]
 [ext_resource path="res://assets/917.svg" type="Texture" id=17]
 [ext_resource path="res://assets/477.svg" type="Texture" id=18]
-[ext_resource path="res://assets/418.svg" type="Texture" id=19]
+[ext_resource path="res://src/img/player/head/20_head_forward.svg" type="Texture" id=19]
 [ext_resource path="res://assets/938.svg" type="Texture" id=20]
 [ext_resource path="res://assets/985.svg" type="Texture" id=21]
 [ext_resource path="res://assets/498.svg" type="Texture" id=22]
 [ext_resource path="res://assets/494.svg" type="Texture" id=23]
-[ext_resource path="res://assets/563.svg" type="Texture" id=24]
+[ext_resource path="res://src/img/player/head/20_head_back.svg" type="Texture" id=24]
 [ext_resource path="res://assets/505.svg" type="Texture" id=25]
-[ext_resource path="res://assets/629.svg" type="Texture" id=26]
-[ext_resource path="res://assets/530.svg" type="Texture" id=27]
+[ext_resource path="res://src/img/player/head/20_head_down.svg" type="Texture" id=26]
+[ext_resource path="res://src/img/player/body/20_body_side.svg" type="Texture" id=27]
+[ext_resource path="res://src/actors/CompositeSprites.gd" type="Script" id=28]
+[ext_resource path="res://src/img/player/head/20_head_front.svg" type="Texture" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BEEFY_IDLE"
@@ -263,7 +265,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "HEAVY_ATTACK"
+resource_name = "HEAVY_ATTACK_SLAM"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/heavy_attack_swung:visible")
@@ -1014,10 +1016,10 @@ tracks/3/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 15.4565, 1.71576 )
+extents = Vector2( 20.072, 44.046 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 20.072, 44.046 )
+extents = Vector2( 15.4565, 1.71576 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 69.741, 29.7346 )
@@ -1030,7 +1032,7 @@ script = ExtResource( 5 )
 autoplay = "IDLE"
 anims/BEEFY_IDLE = SubResource( 1 )
 anims/BLOCK = SubResource( 2 )
-anims/HEAVY_ATTACK = SubResource( 3 )
+anims/HEAVY_ATTACK_SLAM = SubResource( 3 )
 anims/IDLE = SubResource( 4 )
 anims/JUMPING = SubResource( 5 )
 anims/LIGHT_ATTACK_ONE = SubResource( 6 )
@@ -1039,10 +1041,6 @@ anims/LIGHT_ATTACK_TWO = SubResource( 7 )
 [node name="wings_anim" type="AnimationPlayer" parent="."]
 autoplay = "wings"
 anims/wings = SubResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.27742, 21.6015 )
-shape = SubResource( 9 )
 
 [node name="item_select" type="Sprite" parent="."]
 visible = false
@@ -1055,6 +1053,7 @@ position = Vector2( 0.136482, 3.32265 )
 texture = ExtResource( 8 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
+script = ExtResource( 28 )
 
 [node name="left_winger" type="Sprite" parent="PlayerSprite"]
 position = Vector2( 40.4762, -19.0801 )
@@ -1134,18 +1133,19 @@ scale = Vector2( 0.687306, 0.883522 )
 texture = ExtResource( 9 )
 
 [node name="right_arm" type="Sprite" parent="PlayerSprite/normal_body_sprite"]
-position = Vector2( -20.5445, -8.88984 )
-rotation = -0.0174533
+position = Vector2( -12.04, 1.8195 )
+rotation = -1.32296
 scale = Vector2( 0.628373, 0.709455 )
 texture = ExtResource( 14 )
 
 [node name="weapon" type="Sprite" parent="PlayerSprite/normal_body_sprite"]
-position = Vector2( -54.8803, -8.62943 )
-rotation = -1.494
+position = Vector2( 15.6753, 3.96978 )
+rotation = 1.5708
 scale = Vector2( 0.664706, 0.685641 )
 texture = ExtResource( 3 )
 
 [node name="light_attack_two_swung" type="Sprite" parent="PlayerSprite"]
+visible = false
 position = Vector2( 13.6176, -14.2715 )
 texture = ExtResource( 22 )
 
@@ -1171,6 +1171,11 @@ visible = false
 position = Vector2( 4.75267, -42.8134 )
 texture = ExtResource( 19 )
 
+[node name="head_front" type="Sprite" parent="PlayerSprite"]
+visible = false
+position = Vector2( 2.03264, -42.373 )
+texture = ExtResource( 29 )
+
 [node name="head" type="Sprite" parent="PlayerSprite"]
 position = Vector2( -0.674, -42.548 )
 texture = ExtResource( 2 )
@@ -1193,12 +1198,17 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/player_hitbox"]
 position = Vector2( 2.52553, -19.9237 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="shadow" type="Sprite" parent="."]
 position = Vector2( 0.483178, 24.9549 )
 scale = Vector2( 1.70574, 0.634438 )
 texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -1.27742, 21.6015 )
+shape = SubResource( 10 )
 
 [node name="light_attack_hitbox" type="Area2D" parent="."]
 visible = false
