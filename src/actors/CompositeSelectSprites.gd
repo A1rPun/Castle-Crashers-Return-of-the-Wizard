@@ -34,4 +34,6 @@ const character_select_spritesheet = {
 	30: preload("res://src/img/select/30_select.svg"),
 	31: preload("res://src/img/select/1_select.svg"), # Where is Hatty?
 	32: preload("res://src/img/select/21_select.svg"),
+	33: preload("res://src/img/select/34_select.png"),
+	34: preload("res://src/img/select/34_select.png"),
 };
