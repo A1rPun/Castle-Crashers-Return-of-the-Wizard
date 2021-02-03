@@ -73,7 +73,7 @@ scale = Vector2( 0.55, 0.55 )
 texture = ExtResource( 10 )
 
 [node name="Moon" type="Sprite" parent="."]
-position = Vector2( 959.789, 93.3932 )
+position = Vector2( 936.789, 83.3932 )
 scale = Vector2( 0.55, 0.55 )
 texture = ExtResource( 7 )
 
