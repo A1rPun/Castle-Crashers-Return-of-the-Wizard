@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/494.svg-e15aad2d46df7ef31f2685f0dfd26aca.stex"
+path="res://.import/Light2.png-51eb99b777501c38195a504da6c0cb6f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/attacks/494.svg"
-dest_files=[ "res://.import/494.svg-e15aad2d46df7ef31f2685f0dfd26aca.stex" ]
+source_file="res://src/img/attacks/Light2.png"
+dest_files=[ "res://.import/Light2.png-51eb99b777501c38195a504da6c0cb6f.stex" ]
 
 [params]
 

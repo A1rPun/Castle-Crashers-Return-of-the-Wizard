@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/500.svg-e1aa06dcdb812f0ce09d4b7969697678.stex"
+path="res://.import/Skull_Gold.png-d8c1dff2b864f6e5d166975cc82177e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/attacks/500.svg"
-dest_files=[ "res://.import/500.svg-e1aa06dcdb812f0ce09d4b7969697678.stex" ]
+source_file="res://src/img/select/Skull_Gold.png"
+dest_files=[ "res://.import/Skull_Gold.png-d8c1dff2b864f6e5d166975cc82177e1.stex" ]
 
 [params]
 
