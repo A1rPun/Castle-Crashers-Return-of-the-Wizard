@@ -72,8 +72,8 @@ const head_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_head.png"),
 	31: preload("res://src/img/player/31_head.svg"),
 	32: preload("res://src/img/player/21_head.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_head.png"),
-	34: preload("res://src/img/player/Lime Knight/2_head.png"),
+	33: preload("res://src/img/player/Lime Knight/2_head.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_head.png"),
 	35: preload("res://src/img/player/Samurai/13_head.png"),
 	36: preload("res://src/img/player/Unmasked Ninja/22_head.png"),
 };
@@ -112,8 +112,8 @@ const head_forward_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_head_forward.png"),
 	31: preload("res://src/img/player/31_head_forward.svg"),
 	32: preload("res://src/img/player/21_head_forward.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_head_forward.png"),
-	34: preload("res://src/img/player/Lime Knight/2_head_forward.png"),
+	33: preload("res://src/img/player/Lime Knight/2_head_forward.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_head_forward.png"),
 };
 
 const head_back_spritesheet = {
@@ -150,8 +150,8 @@ const head_back_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_head_back.png"),
 	31: preload("res://src/img/player/31_head_back.svg"),
 	32: preload("res://src/img/player/21_head_back.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_head_back.png"),
-	34: preload("res://src/img/player/Lime Knight/2_head_back.png"),
+	33: preload("res://src/img/player/Lime Knight/2_head_back.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_head_back.png"),
 };
 
 const head_front_spritesheet = {
@@ -188,8 +188,8 @@ const head_front_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_head_front.png"),
 	31: preload("res://src/img/player/31_head_front.svg"),
 	32: preload("res://src/img/player/21_head_front.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_head_back.png"),
-	34: preload("res://src/img/player/Lime Knight/2_head_back.png"),
+	33: preload("res://src/img/player/Lime Knight/2_head_back.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_head_back.png"),
 };
 
 const head_down_spritesheet = {
@@ -226,8 +226,8 @@ const head_down_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_head_down.png"),
 	31: preload("res://src/img/player/31_head_down.svg"),
 	32: preload("res://src/img/player/21_head_down.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_head_down.png"),
-	34: preload("res://src/img/player/Lime Knight/2_head_down.png"),
+	33: preload("res://src/img/player/Lime Knight/2_head_down.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_head_down.png"),
 };
 
 const body_spritesheet = {
@@ -264,8 +264,8 @@ const body_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_body.png"),
 	31: preload("res://src/img/player/31_body.svg"),
 	32: preload("res://src/img/player/21_body.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_body.png"),
-	34: preload("res://src/img/player/Lime Knight/2_body.png"),
+	33: preload("res://src/img/player/Lime Knight/2_body.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_body.png"),
 };
 
 const body_side_spritesheet = {
@@ -302,8 +302,8 @@ const body_side_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_body_side.png"),
 	31: preload("res://src/img/player/31_body_side.svg"),
 	32: preload("res://src/img/player/21_body_side.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_body_side.png"),
-	34: preload("res://src/img/player/Lime Knight/2_body_side.png"),
+	33: preload("res://src/img/player/Lime Knight/2_body_side.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_body_side.png"),
 };
 
 const shield_spritesheet = {
@@ -340,8 +340,8 @@ const shield_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_shield.png"),
 	31: preload("res://src/img/player/31_shield.svg"),
 	32: preload("res://src/img/player/17_shield.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_shield.png"),
-	34: preload("res://src/img/player/Lime Knight/2_shield.png"),
+	33: preload("res://src/img/player/Lime Knight/2_shield.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_shield.png"),
 };
 
 const shield_front_spritesheet = {
@@ -378,6 +378,6 @@ const shield_front_spritesheet = {
 	30: preload("res://src/img/player/Blacksmith/30_shield_front.png"),
 	31: preload("res://src/img/player/31_shield_front.svg"),
 	32: preload("res://src/img/player/17_shield_front.svg"),
-	33: preload("res://src/img/player/Cyan Knight/34_shield.png"),
-	34: preload("res://src/img/player/Lime Knight/2_shield.png"),
+	33: preload("res://src/img/player/Lime Knight/2_shield.png"),
+	34: preload("res://src/img/player/Cyan Knight/34_shield.png"),
 };
