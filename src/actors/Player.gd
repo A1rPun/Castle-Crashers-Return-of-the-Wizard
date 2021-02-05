@@ -2,27 +2,27 @@ extends Actor
 
 export(int) var character_id;
 
-var can_move := true; # TODO
-var is_moving := false;
-var is_jumping := false;
-var face_left := false;
-var state := 0;
-const item_select_counter_max := 100;
-var item_select_counter := item_select_counter_max;
-var item_select_index := 0;
+var can_move = true; # TODO
+var is_moving = false;
+var is_jumping = false;
+var face_left = false;
+const item_select_counter_max = 100;
+var item_select_counter = item_select_counter_max;
+var item_select_index = 0;
+var state_machine;
 
-const states := {
-	"idle": 0,
-	"block": 1,
-	"light_attack_one": 2,
-	"light_attack_two": 3,
-	"heavy_attack_slam": 4,
-	"heavy_attack_one": 5,
-	"heavy_uppercut": 6,
-	"heavy_sword_spin": 7
+const states = {
+	"idle": "IDLE",
+	"block": "BLOCK",
+	"light_attack_one": "LIGHT_ATTACK_ONE",
+	"light_attack_two": "LIGHT_ATTACK_TWO",
+	"heavy_attack_slam": "HEAVY_ATTACK_SLAM",
+	"heavy_attack_one": "HEAVY_ATTACK_SLAM",
+	"heavy_uppercut": "HEAVY_ATTACK_SLAM",
+	"heavy_sword_spin": "HEAVY_ATTACK_SLAM"
 };
 
-const characters := {
+const characters = {
 	"barbarian": 6,
 	"king": 12,
 	"necromancer": 20,
@@ -31,6 +31,7 @@ const characters := {
 const composite_sprites = preload("res://src/actors/CompositePlayerSprites.gd");
 
 func _ready():
+	state_machine = $AnimationTree.get("parameters/playback");
 	change_character(self.character_id);
 
 func _physics_process(delta: float) -> void:
@@ -43,22 +44,18 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch_left") or Input.is_action_just_pressed("switch_right"):
 		item_select_counter = 0;
 	
-	if Input.is_action_just_pressed("use_item"):
-		if beefy:
-			to_normal();
-			beefy = false;
-		else: 
-			to_beefy();
-			beefy = true;
+	#if Input.is_action_just_pressed("use_item"):
 
 	if Input.is_action_just_pressed("light_attack"):
-		state = states.light_attack_two if state == states.light_attack_one else states.light_attack_one;
+		var current = state_machine.get_current_node();
+		var state = states.light_attack_two if current == states.light_attack_one else states.light_attack_one;
+		state_machine.travel(state);
 	elif Input.is_action_just_pressed("heavy_attack"):
-		state = states.heavy_attack_slam if is_jumping else states.heavy_attack_one;
+		state_machine.travel(states.heavy_attack_slam if is_jumping else states.heavy_attack_one);
 	elif !is_jumping && Input.is_action_pressed("block"):
-		state = states.block;
+		state_machine.travel(states.block);
 	elif Input.is_action_just_released("block"):
-		state = states.idle;
+		state_machine.travel(states.idle);
 		
 	item_select_counter += 1;
 	update_texture();
@@ -91,7 +88,7 @@ func move_velocity(velocity: Vector3, delta: float) -> Vector3:
 	if $PlayerSprite.position.y > 0.0:
 		$PlayerSprite.position.y = 0.0;
 		is_jumping = false;
-		state = states.idle;
+		state_machine.travel(states.idle);
 		
 	velocity.x = newvel.x;
 	velocity.y = newvel.y;
@@ -107,35 +104,7 @@ func update_texture():
 			$PlayerSprite.scale.x = 1.0;
 			face_left = false;
 			
-	if state == states.light_attack_one:
-		$player_anim.play("LIGHT_ATTACK_ONE");
-	elif state == states.light_attack_two:
-		$player_anim.play("LIGHT_ATTACK_TWO");
-	elif state == states.heavy_attack_slam:
-		$player_anim.play("HEAVY_ATTACK_SLAM");
-	elif state == states.block:
-		$player_anim.play("BLOCK_BEEFY" if beefy else "BLOCK");
-	else:
-		$player_anim.play("IDLE_BEEFY" if beefy else "IDLE");
-	
 	$item_select.visible = item_select_counter < item_select_counter_max;
-
-func to_beefy():
-	if self.character_id == characters.necromancer:
-		$wings_anim.stop();
-	$PlayerSprite/beefy_body_sprite.visible = true;
-	$PlayerSprite/normal_body_sprite.visible = false;
-	
-func to_normal():
-	if self.character_id == characters.necromancer:
-		$wings_anim.play("wings");
-	$PlayerSprite/beefy_body_sprite.visible = false;
-	$PlayerSprite/normal_body_sprite.visible = true;
-
-
-func _on_player_anim_animation_finished(anim_name: String) -> void:
-	if anim_name == "LIGHT_ATTACK_ONE" or anim_name == "LIGHT_ATTACK_TWO":
-		state = states.idle;
 
 func change_character(character_id):
 	$PlayerSprite/head.texture = composite_sprites.head_spritesheet[character_id];
@@ -147,15 +116,14 @@ func change_character(character_id):
 	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[character_id];
 	$PlayerSprite/normal_body_sprite/shield.texture = composite_sprites.shield_spritesheet[character_id];
 	$PlayerSprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[character_id];
-	
-	if character_id == characters.necromancer:
-		$PlayerSprite/left_winger.visible = true;
-		$PlayerSprite/right_winger.visible = true;
-		$wings_anim.play("wings");
-		
+
 	if character_id == characters.barbarian or character_id == characters.king or character_id == characters.necromancer:
 		$PlayerSprite/head.offset.y = -10;
 		$PlayerSprite/head_back.offset.y = -10;
 		$PlayerSprite/head_forward.offset.y = -10;
 		$PlayerSprite/head_front.offset.y = -10;
 		$PlayerSprite/head_down.offset.y = -10;
+
+func _on_player_anim_animation_finished(anim_name: String) -> void:
+	if anim_name == states.light_attack_one:
+		state_machine.travel(states.idle);
