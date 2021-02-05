@@ -92,23 +92,23 @@ scale = Vector2( 0.55, 0.55 )
 texture = ExtResource( 8 )
 
 [node name="Play" type="Sprite" parent="."]
-position = Vector2( 361.307, 277 )
-scale = Vector2( 0.55, 0.55 )
+position = Vector2( 352.398, 277 )
+scale = Vector2( 0.447383, 0.55 )
 texture = ExtResource( 3 )
 
 [node name="Settings" type="Sprite" parent="."]
-position = Vector2( 361.961, 346.138 )
-scale = Vector2( 0.55, 0.55 )
+position = Vector2( 352.999, 346.138 )
+scale = Vector2( 0.447388, 0.55 )
 texture = ExtResource( 2 )
 
 [node name="Credits" type="Sprite" parent="."]
-position = Vector2( 362.353, 415.507 )
-scale = Vector2( 0.55, 0.55 )
+position = Vector2( 353.44, 415.507 )
+scale = Vector2( 0.446719, 0.55 )
 texture = ExtResource( 6 )
 
 [node name="Quit" type="Sprite" parent="."]
-position = Vector2( 357.274, 483.973 )
-scale = Vector2( 0.55, 0.55 )
+position = Vector2( 353.702, 483.973 )
+scale = Vector2( 0.57126, 0.55 )
 texture = ExtResource( 4 )
 
 [node name="Wizard" type="Sprite" parent="."]
@@ -120,19 +120,23 @@ texture = ExtResource( 9 )
 autoplay = "draziw"
 anims/draziw = SubResource( 2 )
 
-[node name="Buttons" type="VBoxContainer" parent="."]
-margin_left = 205.0
-margin_top = 242.0
-margin_right = 519.0
-margin_bottom = 460.0
+[node name="Buttons" type="Control" parent="."]
+margin_left = 204.0
+margin_top = 241.0
+margin_right = 522.0
+margin_bottom = 450.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayButton" type="Button" parent="Buttons"]
-margin_right = 314.0
-margin_bottom = 70.0
+margin_left = 19.0
+margin_top = 2.0
+margin_right = 278.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 0, 70 )
+focus_mode = 0
+enabled_focus_mode = 0
 flat = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -141,10 +145,13 @@ __meta__ = {
 scene_to_load = "res://src/game/Character_Select.tscn"
 
 [node name="SettingsButton" type="Button" parent="Buttons"]
-margin_top = 74.0
-margin_right = 314.0
-margin_bottom = 144.0
+margin_left = 21.0
+margin_top = 71.0
+margin_right = 276.0
+margin_bottom = 141.0
 rect_min_size = Vector2( 0, 70 )
+focus_mode = 0
+enabled_focus_mode = 0
 flat = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -153,10 +160,13 @@ __meta__ = {
 scene_to_load = "res://src/game/Player.tscn"
 
 [node name="CreditsButton" type="Button" parent="Buttons"]
-margin_top = 148.0
-margin_right = 314.0
-margin_bottom = 213.0
+margin_left = 22.0
+margin_top = 140.0
+margin_right = 277.0
+margin_bottom = 209.0
 rect_min_size = Vector2( 0, 65 )
+focus_mode = 0
+enabled_focus_mode = 0
 flat = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -165,13 +175,21 @@ __meta__ = {
 scene_to_load = "res://src/levels/NecroLair.tscn"
 
 [node name="QuitButton" type="Button" parent="."]
-margin_left = 233.0
+margin_left = 226.0
 margin_top = 450.0
-margin_right = 482.0
+margin_right = 481.0
 margin_bottom = 520.0
 rect_min_size = Vector2( 0, 70 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="mouse_entered" from="Buttons/PlayButton" to="." method="_on_PlayButton_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PlayButton" to="." method="_on_PlayButton_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/SettingsButton" to="." method="_on_SettingsButton_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/SettingsButton" to="." method="_on_SettingsButton_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_QuitButton_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton" to="." method="_on_QuitButton_mouse_exited"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
