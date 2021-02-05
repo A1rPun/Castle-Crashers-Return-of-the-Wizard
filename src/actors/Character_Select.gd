@@ -13,6 +13,8 @@ func _physics_process(delta: float) -> void:
 		selected_character_index -= 1;
 		change_sprite();
 	elif Input.is_action_just_pressed("jump"):
+		$Nope.visible = false;
+		$Confirm.visible = true;
 		get_tree().change_scene("res://src/levels/NecroLair.tscn");
 	elif Input.is_action_just_pressed("use_item"):
 		get_tree().change_scene("res://src/game/Main_Menu.tscn");
