@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plant_knightFINAL.png-dd1174f33d189a82f42a7a7120eb5ae9.stex"
+path="res://.import/35_select.png-0d7515294d3c609390e8fadab681e18a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/select/plant_knightFINAL.png"
-dest_files=[ "res://.import/plant_knightFINAL.png-dd1174f33d189a82f42a7a7120eb5ae9.stex" ]
+source_file="res://src/img/select/35_select.png"
+dest_files=[ "res://.import/35_select.png-0d7515294d3c609390e8fadab681e18a.stex" ]
 
 [params]
 
