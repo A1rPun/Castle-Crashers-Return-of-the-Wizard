@@ -5,13 +5,13 @@
 [ext_resource path="res://src/img/weapons/GSMace.png" type="Texture" id=3]
 [ext_resource path="res://assets/99.svg" type="Texture" id=4]
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=5]
-[ext_resource path="res://assets/13.svg" type="Texture" id=6]
+[ext_resource path="res://src/img/attacks/Light1_2.png" type="Texture" id=6]
 [ext_resource path="res://src/img/items/item_select.svg" type="Texture" id=7]
 [ext_resource path="res://src/img/items/item_sandwich.svg" type="Texture" id=8]
 [ext_resource path="res://src/img/player/Green Knight/1_body.png" type="Texture" id=9]
 [ext_resource path="res://src/img/player/Shared/Hand.png" type="Texture" id=10]
 [ext_resource path="res://src/img/player/Shared/Foot.png" type="Texture" id=11]
-[ext_resource path="res://src/img/attacks/490.svg" type="Texture" id=12]
+[ext_resource path="res://src/img/attacks/Light1.png" type="Texture" id=12]
 [ext_resource path="res://src/img/player/Green Knight/1_shield.png" type="Texture" id=13]
 [ext_resource path="res://src/img/player/Green Knight/1_head_forward.png" type="Texture" id=14]
 [ext_resource path="res://assets/918.svg" type="Texture" id=15]
@@ -21,10 +21,10 @@
 [ext_resource path="res://src/img/player/Green Knight/1_head_down.png" type="Texture" id=19]
 [ext_resource path="res://assets/938.svg" type="Texture" id=20]
 [ext_resource path="res://assets/985.svg" type="Texture" id=21]
-[ext_resource path="res://src/img/attacks/498.svg" type="Texture" id=22]
-[ext_resource path="res://src/img/attacks/494.svg" type="Texture" id=23]
+[ext_resource path="res://src/img/player/Shared/Shadow.png" type="Texture" id=22]
+[ext_resource path="res://src/img/attacks/Light2.png" type="Texture" id=23]
 [ext_resource path="res://src/img/player/Green Knight/1_head_back.png" type="Texture" id=24]
-[ext_resource path="res://src/img/attacks/505.svg" type="Texture" id=25]
+[ext_resource path="res://src/img/attacks/Slam.png" type="Texture" id=25]
 [ext_resource path="res://src/img/player/Green Knight/1_head_front.png" type="Texture" id=26]
 [ext_resource path="res://src/img/player/Green Knight/1_body_side.png" type="Texture" id=27]
 [ext_resource path="res://src/actors/CompositePlayerSprites.gd" type="Script" id=28]
@@ -1059,23 +1059,25 @@ texture = ExtResource( 3 )
 [node name="light_attack_two_swung" type="Sprite" parent="PlayerSprite"]
 visible = false
 position = Vector2( 13.6176, -14.2715 )
-texture = ExtResource( 22 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 23 )
 
 [node name="light_attack_one_swung2" type="Sprite" parent="PlayerSprite"]
 visible = false
-position = Vector2( 14.3657, -28.133 )
-scale = Vector2( 0.859692, 1.304 )
-texture = ExtResource( 23 )
+position = Vector2( 15.0331, -30.8027 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
 
 [node name="light_attack_one_swung1" type="Sprite" parent="PlayerSprite"]
 visible = false
 position = Vector2( 31.1917, -15.5148 )
-scale = Vector2( 0.923642, 1 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 12 )
 
 [node name="heavy_attack_swung" type="Sprite" parent="PlayerSprite"]
 visible = false
 position = Vector2( 46.2109, -41.628 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 25 )
 
 [node name="head" type="Sprite" parent="PlayerSprite"]
@@ -1118,13 +1120,13 @@ position = Vector2( 2.52553, -19.9237 )
 shape = SubResource( 9 )
 
 [node name="shadow" type="Sprite" parent="."]
-position = Vector2( 0, 23.955 )
-scale = Vector2( 1.70574, 0.634438 )
-texture = ExtResource( 6 )
+position = Vector2( -0.500565, 20.9516 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( -1.11993, 21.9165 )
+position = Vector2( -0.78622, 19.08 )
 shape = SubResource( 10 )
 
 [node name="light_attack_hitbox" type="Area2D" parent="."]
