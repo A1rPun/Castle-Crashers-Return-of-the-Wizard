@@ -31,6 +31,7 @@ const characters = {
 const composite_sprites = preload("res://src/actors/CompositePlayerSprites.gd");
 
 func _ready():
+	$AnimationTree.active = true;
 	state_machine = $AnimationTree.get("parameters/playback");
 	change_character(self.character_id);
 

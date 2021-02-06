@@ -638,7 +638,7 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -650,7 +650,7 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -662,7 +662,7 @@ tracks/26/loop_wrap = true
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -674,7 +674,7 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -691,7 +691,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, false ]
@@ -703,7 +703,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -1041,7 +1041,6 @@ character_id = 1
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 14 )
 anim_player = NodePath("../player_anim")
-active = true
 parameters/playback = SubResource( 15 )
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
@@ -1186,7 +1185,6 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 25 )
 
 [node name="head" type="Sprite" parent="PlayerSprite"]
-visible = false
 position = Vector2( 3.10559, -27.1777 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -1198,6 +1196,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 26 )
 
 [node name="head_forward" type="Sprite" parent="PlayerSprite"]
+visible = false
 position = Vector2( 2.56485, -26.7265 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 14 )
