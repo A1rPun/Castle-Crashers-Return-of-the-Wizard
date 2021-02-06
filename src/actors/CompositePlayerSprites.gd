@@ -381,3 +381,16 @@ const shield_front_spritesheet = {
 	33: preload("res://src/img/player/Lime Knight/2_shield.png"),
 	34: preload("res://src/img/player/Cyan Knight/34_shield.png"),
 };
+
+const magic_color = {
+	1: Color(0, 1, 0),
+	2: Color(0, 0, 1),
+	3: Color(1, 0, 0),
+	4: Color(1, 0.65, 0),
+	5: Color(0.75, 0.75, 0.75),
+	23: Color(0.75, 0.75, 0.75),
+	29: Color(1, 0.75, 0.8),
+	30: Color(0.63, 0.13, 0.94),
+	33: Color(0, 1, 0),
+	34: Color(0, 1, 1),
+};

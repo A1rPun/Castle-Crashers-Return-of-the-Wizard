@@ -44,6 +44,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch_left") or Input.is_action_just_pressed("switch_right"):
 		item_select_counter = 0;
 	
+	if Input.is_action_pressed("magic"):
+		$PlayerSprite/magic_particles.emitting = true;
+	elif Input.is_action_just_released("magic"):
+		$PlayerSprite/magic_particles.emitting = false;
+	
 	#if Input.is_action_just_pressed("use_item"):
 
 	if Input.is_action_just_pressed("light_attack"):
@@ -116,6 +121,7 @@ func change_character(character_id):
 	$PlayerSprite/normal_body_sprite/body_side.texture = composite_sprites.body_side_spritesheet[character_id];
 	$PlayerSprite/normal_body_sprite/shield.texture = composite_sprites.shield_spritesheet[character_id];
 	$PlayerSprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[character_id];
+	$PlayerSprite/magic_particles.process_material.color = composite_sprites.magic_color[character_id] if composite_sprites.magic_color.has(character_id) else Color(255, 255, 255);
 
 	if character_id == characters.barbarian or character_id == characters.king or character_id == characters.necromancer:
 		$PlayerSprite/head.offset.y = -10;

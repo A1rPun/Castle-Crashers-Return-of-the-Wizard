@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/img/map/Lock.png" type="Texture" id=1]
 [ext_resource path="res://src/img/map/Tile_hover.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/img/map/Run.png" type="Texture" id=5]
 [ext_resource path="res://src/img/map/Idle.png" type="Texture" id=6]
 [ext_resource path="res://src/img/map/Tile_lock.png" type="Texture" id=7]
+[ext_resource path="res://src/actors/Map.gd" type="Script" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,9 +17,39 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=2]
+resource_name = "BOP"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 422.549, 306.935 ), Vector2( 422.549, 289.257 ), Vector2( 422.549, 306.935 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Lock:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 641.045, 256.024 ), Vector2( 639.631, 242.589 ), Vector2( 641.045, 256.024 ) ]
+}
+
 [node name="Map" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,7 +64,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
 [node name="Lock" type="Sprite" parent="."]
-position = Vector2( 641.045, 256.731 )
+position = Vector2( 641.045, 256.024 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
@@ -52,3 +83,7 @@ position = Vector2( 431.581, 340.71 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "walk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "BOP"
+anims/BOP = SubResource( 2 )

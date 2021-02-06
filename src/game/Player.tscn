@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://src/img/player/Green Knight/1_head.png" type="Texture" id=1]
 [ext_resource path="res://src/img/player/Shared/Pants.png" type="Texture" id=2]
@@ -29,63 +29,62 @@
 [ext_resource path="res://src/actors/CompositePlayerSprites.gd" type="Script" id=28]
 [ext_resource path="res://src/img/player/Green Knight/1_shield_front.png" type="Texture" id=29]
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=1]
 animation = "BLOCK"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "HEAVY_ATTACK_SLAM"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "IDLE"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "LIGHT_ATTACK_ONE"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "LIGHT_ATTACK_TWO"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+switch_mode = 2
+auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
-[sub_resource type="AnimationNodeStateMachine" id=24]
-states/BLOCK/node = SubResource( 12 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=14]
+states/BLOCK/node = SubResource( 1 )
 states/BLOCK/position = Vector2( 914, 64 )
-states/HEAVY_ATTACK_SLAM/node = SubResource( 13 )
+states/HEAVY_ATTACK_SLAM/node = SubResource( 2 )
 states/HEAVY_ATTACK_SLAM/position = Vector2( 795, 242 )
-states/IDLE/node = SubResource( 14 )
+states/IDLE/node = SubResource( 3 )
 states/IDLE/position = Vector2( 513, 64 )
-states/LIGHT_ATTACK_ONE/node = SubResource( 15 )
+states/LIGHT_ATTACK_ONE/node = SubResource( 4 )
 states/LIGHT_ATTACK_ONE/position = Vector2( 205, 132 )
-states/LIGHT_ATTACK_TWO/node = SubResource( 16 )
+states/LIGHT_ATTACK_TWO/node = SubResource( 5 )
 states/LIGHT_ATTACK_TWO/position = Vector2( 451, 226 )
-transitions = [ "IDLE", "LIGHT_ATTACK_ONE", SubResource( 17 ), "LIGHT_ATTACK_ONE", "LIGHT_ATTACK_TWO", SubResource( 18 ), "IDLE", "HEAVY_ATTACK_SLAM", SubResource( 20 ), "LIGHT_ATTACK_TWO", "IDLE", SubResource( 21 ), "HEAVY_ATTACK_SLAM", "IDLE", SubResource( 22 ), "LIGHT_ATTACK_ONE", "IDLE", SubResource( 26 ), "IDLE", "BLOCK", SubResource( 27 ), "BLOCK", "IDLE", SubResource( 28 ) ]
+transitions = [ "IDLE", "LIGHT_ATTACK_ONE", SubResource( 6 ), "LIGHT_ATTACK_ONE", "LIGHT_ATTACK_TWO", SubResource( 7 ), "IDLE", "HEAVY_ATTACK_SLAM", SubResource( 8 ), "LIGHT_ATTACK_TWO", "IDLE", SubResource( 9 ), "HEAVY_ATTACK_SLAM", "IDLE", SubResource( 10 ), "LIGHT_ATTACK_ONE", "IDLE", SubResource( 11 ), "IDLE", "BLOCK", SubResource( 12 ), "BLOCK", "IDLE", SubResource( 13 ) ]
 start_node = "IDLE"
 graph_offset = Vector2( -242.937, 3.54973 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
-[sub_resource type="Animation" id=1]
-resource_name = "BLOCK"
+[sub_resource type="Animation" id=16]
 length = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/normal_body_sprite/right_arm:position")
@@ -184,8 +183,7 @@ tracks/7/keys = {
 "values": [ Vector2( 18.8769, 0.358204 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "HEAVY_ATTACK_SLAM"
+[sub_resource type="Animation" id=17]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/heavy_attack_swung:visible")
@@ -344,7 +342,7 @@ tracks/12/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/head:position")
 tracks/0/interp = 1
@@ -682,10 +680,9 @@ tracks/27/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "JUMPING"
+[sub_resource type="Animation" id=19]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=20]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/light_attack_one_swung1:visible")
@@ -856,7 +853,7 @@ tracks/13/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=21]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerSprite/light_attack_two_swung:visible")
@@ -1015,13 +1012,25 @@ tracks/12/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 1
+emission_sphere_radius = 24.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, -100, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 2.0
+color = Color( 0.329412, 0.811765, 0.403922, 1 )
+
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 20.072, 44.046 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 15.4565, 1.71576 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 69.741, 29.7346 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -1030,19 +1039,19 @@ script = ExtResource( 5 )
 character_id = 1
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 24 )
+tree_root = SubResource( 14 )
 anim_player = NodePath("../player_anim")
 active = true
-parameters/playback = SubResource( 25 )
+parameters/playback = SubResource( 15 )
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
 autoplay = "IDLE"
-anims/BLOCK = SubResource( 1 )
-anims/HEAVY_ATTACK_SLAM = SubResource( 2 )
-anims/IDLE = SubResource( 3 )
-anims/JUMPING = SubResource( 5 )
-anims/LIGHT_ATTACK_ONE = SubResource( 6 )
-anims/LIGHT_ATTACK_TWO = SubResource( 7 )
+anims/BLOCK = SubResource( 16 )
+anims/HEAVY_ATTACK_SLAM = SubResource( 17 )
+anims/IDLE = SubResource( 18 )
+anims/JUMPING = SubResource( 19 )
+anims/LIGHT_ATTACK_ONE = SubResource( 20 )
+anims/LIGHT_ATTACK_TWO = SubResource( 21 )
 
 [node name="item_select" type="Sprite" parent="."]
 visible = false
@@ -1057,6 +1066,15 @@ texture = ExtResource( 8 )
 
 [node name="PlayerSprite" type="Node2D" parent="."]
 script = ExtResource( 28 )
+
+[node name="magic_particles" type="Particles2D" parent="PlayerSprite"]
+position = Vector2( 3, -20 )
+emitting = false
+amount = 25
+lifetime = 0.8
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource( 25 )
 
 [node name="beefy_body_sprite" type="Sprite" parent="PlayerSprite"]
 visible = false
@@ -1168,6 +1186,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 25 )
 
 [node name="head" type="Sprite" parent="PlayerSprite"]
+visible = false
 position = Vector2( 3.10559, -27.1777 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -1179,7 +1198,6 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 26 )
 
 [node name="head_forward" type="Sprite" parent="PlayerSprite"]
-visible = false
 position = Vector2( 2.56485, -26.7265 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 14 )
@@ -1204,7 +1222,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/player_hitbox"]
 position = Vector2( 2.52553, -19.9237 )
-shape = SubResource( 9 )
+shape = SubResource( 22 )
 
 [node name="shadow" type="Sprite" parent="."]
 position = Vector2( -0.500565, 20.9516 )
@@ -1214,12 +1232,12 @@ texture = ExtResource( 22 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.78622, 19.08 )
-shape = SubResource( 10 )
+shape = SubResource( 23 )
 
 [node name="light_attack_hitbox" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="light_attack_hitbox"]
 position = Vector2( 33.1126, -15.9951 )
-shape = SubResource( 11 )
+shape = SubResource( 24 )
 [connection signal="animation_finished" from="player_anim" to="." method="_on_player_anim_animation_finished"]
