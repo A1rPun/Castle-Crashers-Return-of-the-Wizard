@@ -1,6 +1,6 @@
 extends Actor
 
-export(int) var character_id;
+@export var character_id: int;
 
 var can_move = true; # TODO
 var is_moving = false;
@@ -38,7 +38,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	is_moving = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")  or Input.is_action_pressed("move_down")  or Input.is_action_pressed("move_up");
 	if can_move:
-		velocity = move_velocity(velocity, delta);
+		vel = move_velocity(vel, delta);
 
 	#offsetY += Input.get_action_strength("move_down") - Input.get_action_strength("move_up");
 	
@@ -83,7 +83,10 @@ func move_velocity(velocity: Vector3, delta: float) -> Vector3:
 		velocity.z = speed.z * direction.z;
 		is_jumping = true;
 		
-	var newvel = move_and_slide(Vector2(velocity.x, velocity.y), Vector2.UP);
+	set_velocity(Vector2(velocity.x, velocity.y))
+	set_up_direction(Vector2.UP)
+	move_and_slide()
+	var newvel = velocity;
 	
 	#if is_attacking and $PlayerSprite.position.y > height_cap:
 	#	velocity.z = -10.0;

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class AnimationPlayer : Godot.AnimationPlayer
+public partial class AnimationPlayer : Godot.AnimationPlayer
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
