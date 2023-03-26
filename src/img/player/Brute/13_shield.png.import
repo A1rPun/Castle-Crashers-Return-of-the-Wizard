@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://84fhbntexx1m"
-path="res://.godot/imported/27_body_side.png-b8b122bd5213315e818f1d45bebff9c1.ctex"
+uid="uid://c31j3b56f2whl"
+path="res://.godot/imported/13_shield.png-54d52d3a5c9519ae760262339a2031a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/player/Unmasked Ninja/27_body_side.png"
-dest_files=["res://.godot/imported/27_body_side.png-b8b122bd5213315e818f1d45bebff9c1.ctex"]
+source_file="res://src/img/player/Brute/13_shield.png"
+dest_files=["res://.godot/imported/13_shield.png-54d52d3a5c9519ae760262339a2031a6.ctex"]
 
 [params]
 
