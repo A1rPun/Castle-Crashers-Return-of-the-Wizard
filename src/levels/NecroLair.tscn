@@ -1,195 +1,221 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://c5m747qqakru8"]
 
-[ext_resource path="res://assets/15.svg" type="Texture2D" id=1]
-[ext_resource path="res://assets/12.svg" type="Texture2D" id=2]
-[ext_resource path="res://assets/17.svg" type="Texture2D" id=3]
-[ext_resource path="res://icon.png" type="Texture2D" id=4]
-[ext_resource path="res://src/game/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/25.svg" type="Texture2D" id=6]
-[ext_resource path="res://assets/27.svg" type="Texture2D" id=7]
-[ext_resource path="res://assets/43.svg" type="Texture2D" id=8]
-[ext_resource path="res://assets/31.svg" type="Texture2D" id=9]
-[ext_resource path="res://src/actors/Level.gd" type="Script" id=10]
+[ext_resource type="Texture2D" uid="uid://c42tmhisl1opb" path="res://assets/15.svg" id="1"]
+[ext_resource type="Texture2D" uid="uid://y2g6qiaq8cua" path="res://assets/12.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://bdrvyx4rql0xo" path="res://assets/17.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://hyhsv6pnktxp" path="res://icon.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://y680px2bbryh" path="res://src/game/Player.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://cnudirugwgy8h" path="res://assets/25.svg" id="6"]
+[ext_resource type="Texture2D" uid="uid://bq26wbv7u7p8m" path="res://assets/27.svg" id="7"]
+[ext_resource type="Texture2D" uid="uid://w8g6gb22v2fe" path="res://assets/43.svg" id="8"]
+[ext_resource type="Texture2D" uid="uid://d1lnjf4ynn0c1" path="res://assets/31.svg" id="9"]
+[ext_resource type="Script" path="res://src/actors/Level.gd" id="10"]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PackedVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2agi1"]
+texture = ExtResource("4")
+texture_region_size = Vector2i(64, 64)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, 32, 32, 32)
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_0/angular_velocity = 0.0
+0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/3/physics_layer_0/angular_velocity = 0.0
+0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/4/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/4/physics_layer_0/angular_velocity = 0.0
+0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/5/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/5/physics_layer_0/angular_velocity = 0.0
+0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, 32, 32, 32)
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/6/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/6/physics_layer_0/angular_velocity = 0.0
+0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+0:0/7/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/7/physics_layer_0/angular_velocity = 0.0
+0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
 
-[sub_resource type="TileSet" id=2]
-0/name = "icon.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
+[sub_resource type="TileSet" id="2"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2agi1")
 
 [node name="NecroLair" type="Node2D"]
-position = Vector2( 307.995, 926.403 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 10 )
+position = Vector2(307.995, 926.403)
+scale = Vector2(2, 2)
+script = ExtResource("10")
 
 [node name="14" type="Sprite2D" parent="."]
-position = Vector2( -65.3313, -23.175 )
-texture = ExtResource( 2 )
+position = Vector2(-65.3313, -23.175)
+texture = ExtResource("2")
 
 [node name="13" type="Sprite2D" parent="."]
-position = Vector2( 306.517, -20.8933 )
-texture = ExtResource( 2 )
+position = Vector2(306.517, -20.8933)
+texture = ExtResource("2")
 
 [node name="20" type="Sprite2D" parent="."]
-position = Vector2( 1131.75, -48.2673 )
-texture = ExtResource( 2 )
-offset = Vector2( -73.2418, 33.3018 )
+position = Vector2(1131.75, -48.2673)
+texture = ExtResource("2")
+offset = Vector2(-73.2418, 33.3018)
 
 [node name="30" type="Sprite2D" parent="."]
-position = Vector2( 1503.42, -49.9492 )
-texture = ExtResource( 2 )
-offset = Vector2( -73.2418, 33.3018 )
+position = Vector2(1503.42, -49.9492)
+texture = ExtResource("2")
+offset = Vector2(-73.2418, 33.3018)
 
 [node name="19" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -132.771 )
-texture = ExtResource( 3 )
-offset = Vector2( 87.7528, -148.301 )
+position = Vector2(180.654, -132.771)
+texture = ExtResource("3")
+offset = Vector2(87.7528, -148.301)
 
 [node name="12" type="Sprite2D" parent="."]
-position = Vector2( 682.58, -13.8746 )
-texture = ExtResource( 2 )
+position = Vector2(682.58, -13.8746)
+texture = ExtResource("2")
 
 [node name="32" type="Sprite2D" parent="."]
-position = Vector2( 450.968, 31.8584 )
-texture = ExtResource( 9 )
+position = Vector2(450.968, 31.8584)
+texture = ExtResource("9")
 
 [node name="34" type="Sprite2D" parent="."]
-position = Vector2( 790.401, 33.6402 )
-texture = ExtResource( 9 )
+position = Vector2(790.401, 33.6402)
+texture = ExtResource("9")
 
 [node name="33" type="Sprite2D" parent="."]
-position = Vector2( 664.784, -41.1953 )
-texture = ExtResource( 9 )
+position = Vector2(664.784, -41.1953)
+texture = ExtResource("9")
 
 [node name="17" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -132.771 )
-texture = ExtResource( 3 )
-offset = Vector2( 361.395, -130.948 )
+position = Vector2(180.654, -132.771)
+texture = ExtResource("3")
+offset = Vector2(361.395, -130.948)
 
 [node name="18" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -134.487 )
-texture = ExtResource( 3 )
-offset = Vector2( -196.568, -137.622 )
+position = Vector2(180.654, -134.487)
+texture = ExtResource("3")
+offset = Vector2(-196.568, -137.622)
 
 [node name="15" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -133.216 )
-texture = ExtResource( 1 )
-offset = Vector2( 221.237, -203.03 )
+position = Vector2(180.654, -133.216)
+texture = ExtResource("1")
+offset = Vector2(221.237, -203.03)
 
 [node name="16" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -132.771 )
-texture = ExtResource( 1 )
-offset = Vector2( -56.4099, -197.69 )
+position = Vector2(180.654, -132.771)
+texture = ExtResource("1")
+offset = Vector2(-56.4099, -197.69)
 
 [node name="25" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -132.771 )
-texture = ExtResource( 6 )
-offset = Vector2( 410.784, -24.1612 )
+position = Vector2(180.654, -132.771)
+texture = ExtResource("6")
+offset = Vector2(410.784, -24.1612)
 
 [node name="27" type="Sprite2D" parent="."]
-position = Vector2( 180.654, -132.771 )
-texture = ExtResource( 7 )
-offset = Vector2( -143.175, -170.994 )
+position = Vector2(180.654, -132.771)
+texture = ExtResource("7")
+offset = Vector2(-143.175, -170.994)
 
 [node name="21" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 3 )
-offset = Vector2( 87.7528, -148.301 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("3")
+offset = Vector2(87.7528, -148.301)
 
 [node name="22" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 3 )
-offset = Vector2( 361.395, -130.948 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("3")
+offset = Vector2(361.395, -130.948)
 
 [node name="23" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 3 )
-offset = Vector2( -196.568, -137.622 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("3")
+offset = Vector2(-196.568, -137.622)
 
 [node name="24" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 1 )
-offset = Vector2( 221.237, -203.03 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("1")
+offset = Vector2(221.237, -203.03)
 
 [node name="26" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 1 )
-offset = Vector2( -56.4099, -197.69 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("1")
+offset = Vector2(-56.4099, -197.69)
 
 [node name="28" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 6 )
-offset = Vector2( 410.784, -24.1612 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("6")
+offset = Vector2(410.784, -24.1612)
 
 [node name="29" type="Sprite2D" parent="."]
-position = Vector2( 975.01, -125.117 )
-texture = ExtResource( 7 )
-offset = Vector2( -143.175, -170.994 )
+position = Vector2(975.01, -125.117)
+texture = ExtResource("7")
+offset = Vector2(-143.175, -170.994)
 
 [node name="31" type="Sprite2D" parent="."]
-position = Vector2( 443.013, -127.725 )
-texture = ExtResource( 1 )
-offset = Vector2( 221.237, -203.03 )
+position = Vector2(443.013, -127.725)
+texture = ExtResource("1")
+offset = Vector2(221.237, -203.03)
 
 [node name="Bounds" type="TileMap" parent="."]
 visible = false
-position = Vector2( 627.287, 0.302795 )
-tile_set = SubResource( 2 )
-collision_layer = 8
-collision_mask = 0
-format = 1
-tile_data = PackedInt32Array( -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -196583, 0, 0, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196579, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -65548, 0, 0, -131040, 0, 0, -12, 0, 0, -65504, 0, 0, 65524, 0, 0, 32, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0 )
+position = Vector2(627.287, 0.302795)
+tile_set = SubResource("2")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -196583, 0, 0, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196579, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -65548, 0, 0, -131040, 0, 0, -12, 0, 0, -65504, 0, 0, 65524, 0, 0, 32, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0)
 
 [node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Player" parent="Node2D" instance=ExtResource( 5 )]
-position = Vector2( -33.2978, -35.6762 )
+[node name="Player" parent="Node2D" instance=ExtResource("5")]
+position = Vector2(-33.2978, -35.6762)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Player"]
-position = Vector2( 136.446, -46.9512 )
-current = true
+position = Vector2(136.446, -46.9512)
 limit_left = -1000
 limit_top = -1000
 limit_right = 10000
 limit_bottom = 1000
+position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-position_smoothing_speed = 8.0
 drag_top_margin = 1.0
 drag_bottom_margin = 1.0
 
 [node name="44" type="Sprite2D" parent="Node2D"]
-position = Vector2( 720.911, 18.4949 )
-texture = ExtResource( 8 )
+position = Vector2(720.911, 18.4949)
+texture = ExtResource("8")
 
 [node name="43" type="Sprite2D" parent="Node2D"]
-position = Vector2( 446.514, 14.0404 )
-texture = ExtResource( 8 )
+position = Vector2(446.514, 14.0404)
+texture = ExtResource("8")
 
 [node name="46" type="Sprite2D" parent="Node2D"]
-position = Vector2( 803.764, -46.5407 )
-texture = ExtResource( 8 )
+position = Vector2(803.764, -46.5407)
+texture = ExtResource("8")
 
 [node name="45" type="Sprite2D" parent="Node2D"]
-position = Vector2( 632.712, -67.9222 )
-texture = ExtResource( 8 )
+position = Vector2(632.712, -67.9222)
+texture = ExtResource("8")
