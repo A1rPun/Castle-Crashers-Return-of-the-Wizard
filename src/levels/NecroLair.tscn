@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://y2g6qiaq8cua" path="res://assets/12.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://bdrvyx4rql0xo" path="res://assets/17.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://hyhsv6pnktxp" path="res://icon.png" id="4"]
-[ext_resource type="PackedScene" uid="uid://bjfy174x0ibrx" path="res://src/game/Player.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://src/game/Player.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://cnudirugwgy8h" path="res://assets/25.svg" id="6"]
 [ext_resource type="Texture2D" uid="uid://bq26wbv7u7p8m" path="res://assets/27.svg" id="7"]
 [ext_resource type="Texture2D" uid="uid://w8g6gb22v2fe" path="res://assets/43.svg" id="8"]
