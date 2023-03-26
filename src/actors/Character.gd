@@ -16,7 +16,10 @@ const states = {
 const characters = {
 	"barbarian": 6,
 	"king": 12,
+	"brute": 13,
 	"necromancer": 20,
+	"blacksmith": 30,
+	"samurai": 35,	
 };
 
 const composite_sprites = preload("res://src/actors/CompositePlayerSprites.gd");
@@ -38,12 +41,21 @@ func change_character(id):
 	$Sprite/normal_body_sprite/shield_front.texture = composite_sprites.shield_front_spritesheet[id];
 	$Sprite/magic_particles.process_material.color = composite_sprites.magic_color[id] if composite_sprites.magic_color.has(id) else Color(255, 255, 255);
 
-	if id == characters.barbarian or id == characters.king or id == characters.necromancer:
-		$Sprite/head.offset.y = -10;
-		$Sprite/head_back.offset.y = -10;
-		$Sprite/head_forward.offset.y = -10;
-		$Sprite/head_front.offset.y = -10;
-		$Sprite/head_down.offset.y = -10;
+	if id == characters.barbarian or \
+		id == characters.king or \
+		id == characters.brute or \
+		id == characters.necromancer or \
+		id == characters.blacksmith or \
+		id == characters.samurai:
+		change_head_offset(-42)
+
+
+func change_head_offset(n):
+	$Sprite/head.offset.y = n;
+	$Sprite/head_back.offset.y = n;
+	$Sprite/head_forward.offset.y = n;
+	$Sprite/head_front.offset.y = n;
+	$Sprite/head_down.offset.y = n;
 
 #func _on_player_anim_animation_finished(anim_name: String) -> void:
 #	if anim_name == states.light_attack_one:
