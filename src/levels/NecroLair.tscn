@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbqes13k2xdk2"]
+[gd_scene load_steps=15 format=3 uid="uid://bbqes13k2xdk2"]
 
 [ext_resource type="Texture2D" uid="uid://c42tmhisl1opb" path="res://assets/15.svg" id="1"]
 [ext_resource type="Texture2D" uid="uid://y2g6qiaq8cua" path="res://assets/12.svg" id="2"]
@@ -64,6 +64,12 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2agi1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soipp"]
+size = Vector2(25.5025, 1.50001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ldr4"]
+size = Vector2(171.5, 694.5)
 
 [node name="NecroLair" type="Node2D"]
 position = Vector2(307.995, 926.403)
@@ -190,6 +196,7 @@ layer_0/tile_data = PackedInt32Array(-131084, 0, 0, -131083, 0, 0, -131082, 0, 0
 y_sort_enabled = true
 
 [node name="Player" parent="Sorter" instance=ExtResource("5")]
+position = Vector2(7.5025, -1.20151)
 
 [node name="Camera2D" type="Camera2D" parent="Sorter/Player"]
 position = Vector2(136.446, -46.9512)
@@ -202,6 +209,10 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 1.0
 drag_bottom_margin = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sorter/Player"]
+position = Vector2(-0.248749, 19.0485)
+shape = SubResource("RectangleShape2D_soipp")
 
 [node name="44" type="Sprite2D" parent="Sorter"]
 position = Vector2(720.911, 18.4949)
@@ -218,3 +229,9 @@ texture = ExtResource("8")
 [node name="45" type="Sprite2D" parent="Sorter"]
 position = Vector2(632.712, -67.9222)
 texture = ExtResource("8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-206.247, -116.452)
+shape = SubResource("RectangleShape2D_4ldr4")

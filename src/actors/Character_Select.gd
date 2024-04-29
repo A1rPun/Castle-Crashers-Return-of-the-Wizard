@@ -1,7 +1,7 @@
 extends Control
 
 const composite_sprites = preload("res://src/actors/CompositeSelectSprites.gd");
-const unlocked_characters = [1, 2, 3, 4, 5, 23, 29, 30, 33, 34];
+const unlocked_characters = [1, 2, 3, 4, 5, 23, 29, 30, 33, 34, 35, 36];
 const totalCharacters = len(unlocked_characters) - 1;
 var selected_character_index = 0;
 

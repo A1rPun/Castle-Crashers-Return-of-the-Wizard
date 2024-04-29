@@ -36,4 +36,6 @@ const character_select_spritesheet = {
 	32: preload("res://src/img/select/21_select.png"),
 	33: preload("res://src/img/select/33_select.png"),
 	34: preload("res://src/img/select/34_select.png"),
+	35: preload("res://src/img/items/sandwich.svg"),
+	36: preload("res://src/img/items/sandwich.svg"),
 };
